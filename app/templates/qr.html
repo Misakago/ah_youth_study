@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>查询二维码</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="icon" href="{% static 'img/favicon.ico' %}" />
+    <script src="{% static 'qrcode.js' %}"></script>
+</head>
+
+<body>
+    <center>
+        <div class="show">
+            <h2>截图保存查询二维码</h2>
+            <div class="show" id="img"></div>
+            <!-- <div class="show" id="url"></div> -->
+            <div class="show"><h3>{{level}}</h3></div>
+        </div>
+    </center>
+    <script>
+        url = '{% autoescape off%} {{url}} {%endautoescape%}';
+        new QRCode(document.getElementById("img"), url);
+        // document.getElementById('url').innerText = url;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>安徽省青年大学习查询</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="icon" href="{% static 'img/favicon.ico' %}" />
+    <style>
+        input[type=text] {
+            width: 60%;
+            padding: 10px 20px;
+            margin-left: 12px;
+            margin: 8px 0;
+            font-size: 15px;
+            box-sizing: border-box;
+            border: 3px solid #ccc;
+            -webkit-transition: 0.5s;
+            transition: 0.5s;
+            outline: none;
+        }
+
+        input[type=text]:focus {
+            border: 3px solid #009688;
+        }
+
+        .button {
+            position: relative;
+            background-color: #4CAF50;
+            border: none;
+            font-size: 15px;
+            color: #FFFFFF;
+            padding: 12px;
+            width: 30%;
+            text-align: center;
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
+            text-decoration: none;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .button:after {
+            content: "";
+            background: #90EE90;
+            display: block;
+            position: absolute;
+            padding-top: 300%;
+            padding-left: 350%;
+            margin-left: -20px!important;
+            margin-top: -120%;
+            opacity: 0;
+            transition: all 0.8s
+        }
+
+        .button:active:after {
+            padding: 0;
+            margin: 0;
+            opacity: 1;
+            transition: 0s
+        }
+    </style>
+    <script>
+        alert('如果您是第一次使用\n请仔细阅读帮助页面')
+    </script>
+</head>
+
+<body>
+    <center>
+        <div class="show">
+            <h2>安徽省青年大学习查询</h2>
+
+            <div class="show">
+                <form action="qr" method="post">
+                    {% csrf_token %}
+                    <input type="text" placeholder="请输入查询网址" name="url">
+                    <input type="submit" class="button">
+                </form>
+            </div>
+
+            <div class="show">
+                <a target="_blank" href="http://dxx.ahyouth.org.cn/#/pages/class/organization/organization">获取网址</a>
+                <a target="_blank" href="help">帮助</a>
+                <a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=ZdvUmyWo80PSzOtiFEuFHpHIEVCUhQiQ&jump_from=webapi&authKey=pHK6AW/CbrI7syODkF9mlKoyZCoPDXn4YNatFwKGY6EWjmXT+wkNM8vFqvjSUyok">交流群</a>
+                <a target="_blank" href="donate">捐助</a>
+            </div>
+            
+        </div>
+    </center>
+</body>
+
+</html>

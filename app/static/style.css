@@ -1,0 +1,19 @@
+html{background:#eee}
+*{letter-spacing:1px;font-family:'Helvetica','Droidsansfallback','Heiti SC';box-sizing:border-box;outline:none;margin:0;padding:0;border:0;text-decoration:none;-webkit-tap-highlight-color:rgba(0,0,0,0);color:#333;}
+.show{background:#fff;margin:8px;box-shadow:5px 5px 5px rgba(0,0,0,0.1);border-radius:2px;padding:16px;font-size:14px;color:#616161;line-height:24px;word-wrap:break-word;}
+a{color:#009688;font-size: large;}
+p{font-size: large;}
+
+#btn{
+    position: fixed;
+    bottom: 70px;
+    right: 30px;
+    width: 90px;
+    height: 44px;
+    background-color: #4569FF;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.05em;
+    opacity:0.8;
+  }

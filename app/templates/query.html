@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>查询结果</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <script src="{% static 'main.js' %}"></script>
+
+</head>
+<body>
+    <button id="btn" onclick="copyToClip({{name}})">复制结果</button>
+    <center>
+        <div class="show">
+            <h2>查询结果</h2>
+            {% for name in name%}
+            <div class="show">
+                <p>{{name}}</p>
+            </div>
+            {%endfor%}
+            <div class="show">
+                {% if num %}
+                <p>{{num}}人未完成</p>
+                {% else%}
+                <p>全员完成</p>
+                {% endif %}
+            </div>
+            <div class="show">
+                <a target="_blank" href="donate">捐助</a>
+            </div>
+        </div>
+    </center>
+</body>
+</html>

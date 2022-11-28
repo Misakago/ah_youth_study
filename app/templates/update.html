@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>更新</title>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        alert('查询系统已升级\n现已支持安徽省所有组织\n可配置组织名单')
+        var div = document.querySelector('div');
+        var time = 3;
+        change();
+        setInterval(change, 1000);
+
+        function change() {
+            if (time == 0) {
+                location.href = 'index';
+            } else {
+                div.innerHTML = time + '秒后跳转新页面';
+                time--;
+            }
+        }
+    </script>
+</body>
+
+</html>

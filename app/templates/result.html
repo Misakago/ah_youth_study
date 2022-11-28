@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>查询结果</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <script src="{% static 'main.js' %}"></script>
+    <script src="{% static 'qrcode.js' %}"></script>
+
+</head>
+<body>
+    <center id="qrcode" style="display: none;">
+        <div class="show">
+            <h3>{{level2}} {{level3}}</h3>
+            <h3>{{level4}}</h3>
+                <div class="show" id="img">
+                <h3>截图保存二维码，扫一扫即可查询</h3>
+                </div>
+            </div>   
+        </div>
+    </center>
+    <center id="result">
+    <button id="btn" onclick="copyToClip({{undone_name}})">复制结果</button>
+    <div class="show">
+    <h2>查询结果</h2>
+    {% for name in undone_name%}
+    <div class="show">
+    <p>{{name}}</p>
+    </div>
+    {%endfor%}
+    <div class="show">
+    {% if num %}
+    <p>{{num}}人未完成</p>
+    {% else%}
+    <p>全员完成</p>
+    {% endif %}
+    
+    <p style="font-size: small;">累计查询{{times}}次</p>
+    <a onclick="show_QRcode()">查看二维码</a>
+    <br>
+    <a href="mailto:togetherconsider@qq.com?subject=青年大学习查询网站反馈" style="font-size: small;">反馈邮箱:togetherconsider@qq.com</a> 
+    <br>
+    </div>
+    </div>
+    </center>
+</body>
+</html>
